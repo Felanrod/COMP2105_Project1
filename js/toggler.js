@@ -1,8 +1,10 @@
 const body = document.querySelector('body');
 const lightSwitch = document.querySelector('#lightSwitch');
 const plunger = document.querySelector('#plunger');
+const exit = document.querySelector('#doorway');
 let lightInitialized = false;
 let plungerInitialized = false;
+let end = false;
 
 lightSwitch.addEventListener('click', () => {
     if (lightInitialized) {
@@ -26,3 +28,4 @@ plunger.addEventListener('click', () => {
         body.classList.toggle('plungerDown');
     }
 });
+

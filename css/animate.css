@@ -1,5 +1,5 @@
 body {
-    perspective: 1000px;
+    perspective: 100px;
     background-color: #000;
 }
 
@@ -87,18 +87,23 @@ body {
     
 #doorPath {
     opacity: 1;
-    fill: #FB9876;
+    fill: #000;
     fill-opacity: 1;
     stroke: #e5ff00;
     stroke-width: 3px;
-    stroke-opacity: 1;
+    stroke-opacity: 0;
     
     stroke-dasharray: 864;
     stroke-dashoffset: 864;
-    animation: dash 5s linear forwards;
-    transform-origin: center bottom;
+    
+    transform-origin: center top;
     transition: transform 1500ms ease-in 3000ms;
+}
 
+#doorway {
+    opacity: 0;
+    fill: #FFF;
+    fill-opacity: 1;
 }
 
 @keyframes dash {
@@ -152,6 +157,18 @@ body {
 .plungerDown #plungerHandle {
     transform: translateY(38px);
 }
+
+.plunged #doorPath {
+    stroke-opacity: 1;
+    animation: dash 3000ms linear forwards 300ms;
+    transform: rotateX(85deg);
+    
+}
+
+.plunged #doorway {
+    opacity: 1;
+}
+    
 
 @keyframes lightFlicker {
     0%, 15%, 30%, 55%, 65% {
