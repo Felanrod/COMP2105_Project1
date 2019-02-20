@@ -20,12 +20,13 @@ plunger.addEventListener('click', () => {
     if (body.classList.contains('lightSwitchOn')) {
         if (!plungerInitialized) {
             body.classList.add('plunged');
-        // body.classList.toggle('lightSwitchOff');
         }
-    // if(!lightInitialized) {
-    //     lightInitialized = true;
-    // }
         body.classList.toggle('plungerDown');
     }
 });
 
+exit.addEventListener('click', () => {
+    if (body.classList.contains('plunged')) {
+        body.classList.toggle('ended');
+    }
+});

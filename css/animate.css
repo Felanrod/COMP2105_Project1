@@ -9,8 +9,6 @@ body {
     height: 156px;
     width: 67px;
     stroke-width: 10px;
-    /* fill: #000; */
-    /* fill: #FFF; */
 }
 
 #lightOff {
@@ -27,17 +25,13 @@ body {
     font-family: Oswald, sans-serif;
     font-size: 24px;
     fill:#5aed86;
-    /* fill:#000000; */
-    /* opacity: 0; */
+
 }
 
 #lightSwitchSwitch {
     stroke: #5aed86;
-    /* stroke-opacity: null; */
     stroke-width: 5px;
-    /* fill-opacity: 0; */
     fill: #000;
-    /* fill: #FFF; */
     transition: transform 300ms;
     transform-origin: 50% 53%;
 }
@@ -69,20 +63,18 @@ body {
 #plungerHandle {
     opacity: 1;
     fill: #631e1e;
-    /* fill-opacity: 1; */
     transition: transform 300ms cubic-bezier(.09, -0.65, 1, -.39);
 }
 
 #plungerBox {
     opacity: 1;
     fill: #b41e1e;
-    /* fill-opacity: 1; */
     filter: drop-shadow(0 13px 7px black);
-    /* box-shadow: 0 13px 7px black; */
 }
 
 #door {
     transform: rotate(180deg);
+    transition: transform 1000ms ease-in 200ms;
 }
     
 #doorPath {
@@ -106,34 +98,14 @@ body {
     fill-opacity: 1;
 }
 
-@keyframes dash {
-    from {
-        stroke-dashoffset: 864;
-    }
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
 .lightSwitchOn #lightSwitchOutline, .lightSwitchOn #lightSwitchSwitch {
-    /* fill-opacity: 1; */
-    /* stroke: #000; */
     animation: lightSwitchColourFlicker 1500ms forwards 300ms;
 }
 .lightSwitchOn #lightOff, .lightSwitchOn #lightOn {
     animation: lightSwitchTextColourFlicker 1500ms forwards 300ms;
 }
 
-/* .lightSwitchOn #lightOn {
-    fill: #000;
-}
-.lightSwitchOn #lightOff {
-    fill: #000;
-} */
-
 .lightSwitchOn #lightSwitchSwitch {
-    /* fill: #FFF;
-    stroke: #000; */
     transform: rotateX(-180deg);
 }
 
@@ -167,6 +139,10 @@ body {
 
 .plunged #doorway {
     opacity: 1;
+}
+
+.ended #door {
+    transform: scale(20);
 }
     
 
@@ -238,5 +214,15 @@ body {
     100% {
         fill: #000;
         opacity: 1;
+    }
+}
+
+/* Courtesy of https://css-tricks.com/svg-line-animation-works/ */
+@keyframes dash {
+    from {
+        stroke-dashoffset: 864;
+    }
+    to {
+        stroke-dashoffset: 0;
     }
 }
